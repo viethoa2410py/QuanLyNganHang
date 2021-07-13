@@ -6,19 +6,21 @@
         xmlns:local="clr-namespace:QuanLyThuVien"
         mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        
         xmlns:uc="clr-namespace:QuanLyThuVien.UserControlCustom"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-     TextElement.FontWeight="Regular"
-     TextElement.FontSize="13"
-     TextOptions.TextFormattingMode="Ideal"
-     TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         DataContext="{StaticResource MainVM}"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
+        
         Title="MainWindow" Height="500" Width="800">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -34,74 +36,288 @@
             <uc:ControlBarUC></uc:ControlBarUC>
         </Grid>
         <Grid Grid.Row="1">
-            <materialDesign:DrawerHost
-        x:Name="DrawerHost"
-        Margin="0,0,0,0.4"
-        HorizontalAlignment="Center"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.ColumnSpan="2" Margin="0,0,0,0.4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <materialDesign:Card       
+                        materialDesign:ShadowAssist.ShadowDepth="Depth5" Width="200" Height="350" VerticalAlignment="Center" Background="Gray">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition
+        Height="140" />
+                                <RowDefinition
+        Height="*" />
+                                <RowDefinition
+        Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image
+      Source="C:\Users\AN515-43\source\repos\QuanLyThuVien\QuanLyThuVien\ResourceImage\so-tiet-kiem.jpg"
+      Height="140"
+      Width="196"
+      Stretch="UniformToFill" />
+                            <Button
+                                Command="{Binding PassbookCommand}"
+                                Grid.Row="0"
+                                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Margin="0 0 16 -20">
+                                <materialDesign:PackIcon
+        Kind="PageNextOutline" Height="30" Width="30" />
+                            </Button>
+                            <StackPanel
+      Grid.Row="1"
+      Margin="8 24 8 0">
+                                <TextBlock        
+                                    FontWeight="Bold">     
+                                    Lập sổ tiết kiệm
+                                </TextBlock>
+                                <TextBlock
+        TextWrapping="Wrap"
         VerticalAlignment="Center"
-        BorderThickness="2"
-        BorderBrush="{DynamicResource MaterialDesignDivider}" Height="458" Width="800">
-                <materialDesign:DrawerHost.Style>
-                    <Style
+        Text="Tạo sổ mới, yều cầu đầy đủ các thông tin gồn có: Tên, CMND, địa chỉ, loại tiết kiệm, số tiền, ngày gửi" />
+                            </StackPanel>
+                            <StackPanel
+      HorizontalAlignment="Right"
+      Grid.Row="2"
+      Orientation="Horizontal"
+      Margin="8">
+                                <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon
+          Kind="ShareVariant" />
+                                </Button>
+                                <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon
+          Kind="Heart" />
+                                </Button>
+
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <materialDesign:Card       
+                        materialDesign:ShadowAssist.ShadowDepth="Depth5" Width="200" Height="350" VerticalAlignment="Center" Background="DarkGoldenrod">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition
+        Height="140" />
+                                <RowDefinition
+        Height="*" />
+                                <RowDefinition
+        Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image
+      Source="C:\Users\AN515-43\source\repos\QuanLyThuVien\QuanLyThuVien\ResourceImage\phieu-gui-tien.jpg"
+      Height="140"
+      Width="196"
+      Stretch="UniformToFill" />
+                            <Button
+                                Command="{Binding PaymentCommand}"
+                                Grid.Row="0"
+                                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Margin="0 0 16 -20">
+                                <materialDesign:PackIcon
+        Kind="PageNextOutline" Height="30" Width="30" />
+                            </Button>
+                            <StackPanel
+      Grid.Row="1"
+      Margin="8 24 8 0">
+                                <TextBlock        
+                                    FontWeight="Bold">     
+                                    Lập phiếu gửi tiền
+                                </TextBlock>
+                                <TextBlock
+        TextWrapping="Wrap"
+        VerticalAlignment="Center"
+        Text="Tạo phiếu mới, yều cầu đầy đủ các thông tin gồn có: Mã sổ, mã phiếu, tên khách hàng, số tiền, ngày gửi" />
+                            </StackPanel>
+                            <StackPanel
+      HorizontalAlignment="Right"
+      Grid.Row="2"
+      Orientation="Horizontal"
+      Margin="8">
+                                <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon
+          Kind="ShareVariant" />
+                                </Button>
+                                <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon
+          Kind="Heart" />
+                                </Button>
+
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <materialDesign:Card       
+                        materialDesign:ShadowAssist.ShadowDepth="Depth5" Width="200" Height="350" VerticalAlignment="Center" Background="DarkGreen">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition
+        Height="140" />
+                                <RowDefinition
+        Height="*" />
+                                <RowDefinition
+        Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image
+      Source="C:\Users\AN515-43\source\repos\QuanLyThuVien\QuanLyThuVien\ResourceImage\phieu-rut-tien.jpg"
+      Height="140"
+      Width="196"
+      Stretch="UniformToFill" />
+                            <Button
+                                Command="{Binding ReceiptsCommand}"
+                                Grid.Row="0"
+                                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Margin="0 0 16 -20">
+                                <materialDesign:PackIcon
+        Kind="PageNextOutline" Height="30" Width="30" />
+                            </Button>
+                            <StackPanel
+      Grid.Row="1"
+      Margin="8 24 8 0">
+                                <TextBlock        
+                                    FontWeight="Bold">     
+                                    Lập phiếu rút tiền
+                                </TextBlock>
+                                <TextBlock
+        TextWrapping="Wrap"
+        VerticalAlignment="Center"
+        Text="Tạo phiếu mới, yều cầu đầy đủ các thông tin gồn có: Mã sổ, mã phiếu, tên khách hàng, số tiền, ngày gửi" />
+                            </StackPanel>
+                            <StackPanel
+      HorizontalAlignment="Right"
+      Grid.Row="2"
+      Orientation="Horizontal"
+      Margin="8">
+                                <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon
+          Kind="ShareVariant" />
+                                </Button>
+                                <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        materialDesign:RippleAssist.IsCentered="True">
+                                    <materialDesign:PackIcon
+          Kind="Heart" />
+                                </Button>
+
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="0" Margin="0,0,10,0.4" Grid.ColumnSpan="2" >
+                <materialDesign:DrawerHost
+        x:Name="DrawerHost"
+        VerticalAlignment="Top"
+        BorderBrush="{DynamicResource MaterialDesignDivider}" Height="458">
+                    <materialDesign:DrawerHost.Style>
+                        <Style
       TargetType="materialDesign:DrawerHost"
       BasedOn="{StaticResource {x:Type materialDesign:DrawerHost}}">
-                        <Style.Triggers>
-                            <DataTrigger
+                            <Style.Triggers>
+                                <DataTrigger
           Binding="{Binding IsChecked, ElementName=BackgroundToggle}"
           Value="True">
-                                <Setter
+                                    <Setter
             Property="OverlayBackground"
             Value="{DynamicResource PrimaryHueMidBrush}" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </materialDesign:DrawerHost.Style>
-                <materialDesign:DrawerHost.LeftDrawerContent>
-                    <StackPanel
-      Margin="16">
-                        <TextBlock
-        Margin="4"
-        HorizontalAlignment="Center"
-        Text="TÁC VỤ" />
-                        <Button        
-                            
-                            Margin="4"        
-                            HorizontalAlignment="Center"        
-                            Style="{DynamicResource MaterialDesignFlatButton}"        
-                            Content="Lập Phiếu Gửi Tiền" />
-                        <Button
-        Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
-        Margin="4"
-        HorizontalAlignment="Center"
-        Style="{DynamicResource MaterialDesignFlatButton}"
-        Content="Báo Cáo Thống Kê" />
-                    </StackPanel>
-                </materialDesign:DrawerHost.LeftDrawerContent>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </materialDesign:DrawerHost.Style>
+                    <materialDesign:DrawerHost.LeftDrawerContent>
+                        <StackPanel
+      
+                            Margin="16">
+                            <TextBlock        
+                                Margin="4"        
+                                HorizontalAlignment="Center"        
+                                Text="TÁC VỤ" />
+                            <Button                                                                
+                                Command="{Binding PassbookListViewCommand}"
+                                Margin="4"                                    
+                                HorizontalAlignment="Center"                                    
+                                Style="{DynamicResource MaterialDesignFlatButton}"                                    
+                                Content="Danh Sách Sổ" />
+                            <Button        
+                                Command="{Binding StatisticalCommand}"        
+                                Margin="4"        
+                                HorizontalAlignment="Center"        
+                                Style="{DynamicResource MaterialDesignFlatButton}"        
+                                Content="Thống Kê Ngày" />
+                            <Button        
+                                Command="{Binding MonthStatisticalCommand}"        
+                                Margin="4"        
+                                HorizontalAlignment="Center"        
+                                Style="{DynamicResource MaterialDesignFlatButton}"        
+                                Content="Thống Kê Tháng" />
+                        </StackPanel>
+                    </materialDesign:DrawerHost.LeftDrawerContent>
 
-                <Grid      
-                    VerticalAlignment="Center"      
-                    HorizontalAlignment="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Button     
-                        Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"        
-                        CommandParameter="{x:Static Dock.Left}"        
-                        Grid.Row="1"        
-                        Grid.Column="0"        
-                        Margin="-364,-226,372.6,194"
-                        Content="{materialDesign:PackIcon Kind=MicrosoftXboxControllerMenu, Size=25}"/>
-                </Grid>
+                    <Grid      
+                    VerticalAlignment="Top"      
+                    HorizontalAlignment="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button                             
+                            materialDesign:ShadowAssist.ShadowDepth="Depth5"                        
+                            Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"                                
+                            CommandParameter="{x:Static Dock.Left}"                                
+                            Grid.Row="1"                                
+                            Grid.Column="0"                                                        
+                            Content="{materialDesign:PackIcon Kind=MicrosoftXboxControllerMenu, Size=25}" />
+                    </Grid>
 
-            </materialDesign:DrawerHost>
-
+                </materialDesign:DrawerHost>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

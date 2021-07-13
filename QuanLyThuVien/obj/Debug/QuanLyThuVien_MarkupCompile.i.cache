@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\AN515-43\source\repos\QuanLyThuVien\QuanLyThuVien\App.xaml
-5-671719598
+111514383249
 
-12-1337516639
+181612049681
 18-569598552
-CustomerWindow.xaml;Logscreen.xaml;MainWindow.xaml;ResourceXAML\MainResource.xaml;UserControlCustom\ControlBarUC.xaml;
+CustomerWindow.xaml;Logscreen.xaml;MainWindow.xaml;MonthStatistical.xaml;Passbook.xaml;PassbookListView.xaml;Payment.xaml;Receipts.xaml;ResourceXAML\MainResource.xaml;Statistical.xaml;UserControlCustom\ControlBarUC.xaml;
 
 True
 
