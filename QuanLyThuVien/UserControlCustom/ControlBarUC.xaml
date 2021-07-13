@@ -26,7 +26,7 @@
                     ToolTip="Drop Out" DockPanel.Dock="Right"
                     Background="{DynamicResource MaterialDesignTextFieldBoxBackground}">
                     <materialDesign:PackIcon    
-                        Kind="Power"    
+                        Kind="CloseOutline"    
                         Height="30"  
                         Width="30" />
                 </Button>

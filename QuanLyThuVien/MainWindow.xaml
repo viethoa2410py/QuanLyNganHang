@@ -60,7 +60,7 @@
         Height="Auto" />
                             </Grid.RowDefinitions>
                             <Image
-      Source="C:\Users\AN515-43\source\repos\QuanLyThuVien\QuanLyThuVien\ResourceImage\so-tiet-kiem.jpg"
+      Source=".\ResourceImage\so-tiet-kiem.jpg"
       Height="140"
       Width="196"
       Stretch="UniformToFill" />
@@ -126,7 +126,7 @@
         Height="Auto" />
                             </Grid.RowDefinitions>
                             <Image
-      Source="C:\Users\AN515-43\source\repos\QuanLyThuVien\QuanLyThuVien\ResourceImage\phieu-gui-tien.jpg"
+      Source=".\ResourceImage\phieu-gui-tien.jpg"
       Height="140"
       Width="196"
       Stretch="UniformToFill" />
@@ -192,7 +192,7 @@
         Height="Auto" />
                             </Grid.RowDefinitions>
                             <Image
-      Source="C:\Users\AN515-43\source\repos\QuanLyThuVien\QuanLyThuVien\ResourceImage\phieu-rut-tien.jpg"
+      Source=".\ResourceImage\phieu-rut-tien.jpg"
       Height="140"
       Width="196"
       Stretch="UniformToFill" />
